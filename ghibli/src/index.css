@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+ }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,39 +23,51 @@ code {
   color: #ffffff;
 }
  
-*{
-  margin: 0;
-  padding: 0;
- }
- 
-.movie-card{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 1rem;
-}
- 
-.movie-info{
-  display: flex;
-  flex-direction: column;
-  text-align:start;
-  padding-left: 1rem;
-}
- 
-.movie-description{
-  padding-top:9rem;
-}
+/*movie list*/
  
 img{
-  width: 20rem;
-  height: 20rem;
+  width: 18rem;
+  height: 22rem;
+}
+
+.movie-list-card:hover{
+  transform: scale(1.1);
+}
+
+.movie-list-card{
+  padding: 1rem;
 }
  
-.container{
-  align-items: center;
+.movie-list-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: #454545;
-  padding:2rem;
   border-radius: 5rem;
-  margin:1rem;
+  padding: 2.5rem;
+  margin: 0 2rem 0 2rem;
 }
  
+/*navbar*/
+.link{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li{
+  list-style: none;
+  padding: 1rem;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:1rem;
+}
