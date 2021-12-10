@@ -31,7 +31,7 @@ img{
 }
 
 .movie-list-card:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .movie-list-card{
@@ -58,6 +58,12 @@ img{
 li{
   list-style: none;
   padding: 1rem;
+  transition: 2s;
+}
+
+li:hover{
+  border-radius: 5rem;
+  background-color: #454545;
 }
 
 ul{
@@ -70,4 +76,89 @@ nav{
   flex-direction: row;
   justify-content: space-between;
   padding:1rem;
+}
+
+.hamburger{
+  display:none;
+}
+
+@media screen and (max-width:960px) {
+  nav{
+    display: flex;
+    flex-direction: column;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+  }
+
+  .movie-list-card{
+    width:20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 1rem 0 1rem;
+  }
+  img{
+    width:10rem;
+    height:12rem;
+  }
+}
+
+@media screen and (max-width:650px){
+  .movie-list-card{
+    width:20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 2rem 0 2rem;
+  }
+  img{
+    width:10rem;
+    height:12rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  .movie-list-card{
+    width:20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 2rem 0 2rem;
+  }
+  img{
+    width:10rem;
+    height:12rem;
+  }
+
+  nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-menu{
+    display:none;
+    width: 100%;
+    height:17rem;
+    position: absolute;
+    top:3rem;
+  }
+
+  .nav-menu.active{
+    display:flex;
+    flex-direction: column;
+    left: 0;
+  }
+  .hamburger{
+    display:block;
+  }
+  ul{
+    background-color: #454545;
+    opacity: 98%;
+  }
 }

@@ -8,6 +8,10 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path='/' component={MovieList}/>
+        {/* <Route exact path='/characters' component={}/>
+        <Route exact path='/characters' component={}/>
+        <Route exact path='/characters' component={}/>
+        <Route exact path='/characters' component={}/> */}
       </Switch>
     </div>
   );
