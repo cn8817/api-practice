@@ -19,7 +19,8 @@ export default function Movie(props){
     }, [id])
 
     return(
-        <div>
+        <div className='movie-container'>
+            <div className='movie-card'>
             <img src={film.image}/>
             <div className='movie-info'>
                 <p>Title: {film.title}</p>
@@ -28,6 +29,7 @@ export default function Movie(props){
                 <div className='movie-description'>
                     <p>Description: {film.description}</p>
                 </div>
+            </div>
             </div>
         </div>
     )

@@ -9,17 +9,12 @@ export default function MovieList() {
     const fetchMovies = () => {
         axios.get('https://ghibliapi.herokuapp.com/films')
             .then(res => {
-                // return res
                 setMovie(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
     }
-
-    // const onClick = () => {
-    //     push(`/${movie.id}`)
-    // }
  
     useEffect(() => {
         fetchMovies()
@@ -28,7 +23,7 @@ export default function MovieList() {
     return(
         <div className='movie-list-container'>
             {movie.map(movie => (
-                <Link to={`/${movie.id}`}>
+                <Link className='link' to={`/${movie.id}`}>
                     <div className='movie-list-card' >
                         <div className='movie-list-img'>
                             <img src= {movie.image}/>
