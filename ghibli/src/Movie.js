@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 export default function Movie(props){
     const [film, setFilm] = useState('')
+    const {push} = useHistory()
     const {id} = useParams()
 
     useEffect(() => {
@@ -18,8 +19,13 @@ export default function Movie(props){
             })
     }, [id])
 
+    const onClick = () => {
+        push('/')
+    }
+
     return(
         <div className='movie-container'>
+            <button onClick={onClick}>Back</button>
             <div className='movie-card'>
             <img src={film.image}/>
             <div className='movie-info'>
