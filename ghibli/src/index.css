@@ -106,7 +106,7 @@ nav{
   }
 }
 
-@media screen and (max-width:650px){
+@media screen and (max-width:750px){
   .movie-list-card{
     width:20%;
     display: flex;
