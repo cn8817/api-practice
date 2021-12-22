@@ -105,6 +105,7 @@ button{
   padding:0.8rem;
   border-radius: 5rem;
   margin-left: -70rem;
+  cursor: pointer;
 }
 
 .movie-card{
@@ -123,6 +124,11 @@ button{
 
 .movie-description{
   margin-top: 10rem;
+}
+.search{
+  padding:0.5rem;
+  margin-bottom: 1rem;
+  width:50%;
 }
 
 @media screen and (max-width:960px) {
