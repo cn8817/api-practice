@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
+import {connect} from 'react-redux'
+import { getFilmsId } from './actions'
 
-export default function Movie(props){
-    const [film, setFilm] = useState('')
+function Movie(props){
     const {push} = useHistory()
     const {id} = useParams()
+    const {film} = props
 
     useEffect(() => {
-        axios
-            .get(`https://ghibliapi.herokuapp.com/films/${id}`)
-            .then(res => {
-                setFilm(res.data)
-                console.log(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        props.getFilmsId(id)
     }, [id])
 
     const onClick = () => {
@@ -40,3 +34,11 @@ export default function Movie(props){
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        film: state.getFilmByIdReducer.film
+    }
+}
+
+export default connect(mapStateToProps, {getFilmsId})(Movie)
