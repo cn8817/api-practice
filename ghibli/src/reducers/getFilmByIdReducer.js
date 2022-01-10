@@ -1,4 +1,4 @@
-import { GET_FILMS_ID_SUCCESS } from "../actions";
+import { GET_FILMS_ID_SUCCESS, GET_FILMS_ID_ACTION, GET_FILMS_ACTION } from "../actions";
 
 const initialState = {
     film:[
@@ -11,15 +11,22 @@ const initialState = {
             release_date: '',
             description: ''
         }
-    ]
+    ],
+    isFetching: false
 }
 
 const getFilmByIdReducer = (state = initialState, action) => {
     switch(action.type){
+        case GET_FILMS_ACTION:
+            return({
+                ...state,
+                isFetching: true
+            })
         case GET_FILMS_ID_SUCCESS:
             return({
                 ...state,
-                film: action.payload
+                film: action.payload,
+                isFetching:false
             })
         default:
             return state

@@ -7,14 +7,25 @@ import { getFilmsId } from './actions'
 function Movie(props){
     const {push} = useHistory()
     const {id} = useParams()
-    const {film} = props
+    const { film, isFetching } = props
 
     useEffect(() => {
-        props.getFilmsId(id)
+        setTimeout(()=>{
+            props.getFilmsId(id)
+        }, 3000)
     }, [id])
 
     const onClick = () => {
         push('/')
+    }
+
+    if(isFetching === true){
+        return(
+            <div className='loading'>
+                <img src='https://i.pinimg.com/originals/be/33/5f/be335fd0dc86f5fda4c98e057a5e322f.gif' alt='loading...' className='loading-img'/>
+                <h2>Loading Film...</h2>
+            </div>
+        )
     }
 
     return(
@@ -37,7 +48,8 @@ function Movie(props){
 
 const mapStateToProps = state => {
     return {
-        film: state.getFilmByIdReducer.film
+        film: state.getFilmByIdReducer.film,
+        isFetching: state.getFilmByIdReducer.isFetching
     }
 }
 
