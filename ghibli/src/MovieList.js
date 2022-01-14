@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { getFilms } from './actions'
  
 function MovieList(props) {
-    const { films, isFetching } = props
+    const { films } = props
     const [search, setSearch] = useState('')
  
     useEffect(() => {
@@ -42,7 +42,6 @@ function MovieList(props) {
 const mapStateToProps = state => {
     return{
         films: state.getFilmsReducer.films,
-        isFetching: state.getFilmsReducer.isFetching
     }
 }
 export default connect(mapStateToProps, {getFilms})(MovieList)

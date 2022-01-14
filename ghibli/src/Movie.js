@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
 import {connect} from 'react-redux'
 import { getFilmsId } from './actions'
