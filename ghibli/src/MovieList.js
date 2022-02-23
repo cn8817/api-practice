@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { getFilms } from './actions'
+
+//add a favorite or watched button that adds movies to a new list that users can view 
  
 function MovieList(props) {
     const { films } = props
