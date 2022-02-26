@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import {Route, Switch } from 'react-router-dom'
 import MovieList from './MovieList';
 import Movie from './Movie';
+//make new route for favorites and finish the other components
 
 function App() {
   return (
